@@ -69,12 +69,12 @@
 								<m:Label text="{Resume>/address/city}, {Resume>/address/state}"/>
 							</m:HBox>
 						</layout:VerticalLayout>
-						<layout:VerticalLayout visible="{= ${device>/Desktop} ? false: true}" class="sapUiLargeMarginBeginEnd">
+						<layout:VerticalLayout visible="{= !${device>/system/phone} }"  class="sapUiLargeMarginBeginEnd">
 							<m:Image densityAware="false" id="imgId"/>
 							<m:Button text="Download contact informations (vcard)" press="downloadVCard"/>
 						</layout:VerticalLayout>
 					</m:FlexBox>
-												<m:ObjectStatus class="sapUiSmallMarginBottom" text="Last update: { path: 'Resume>/updated', formatter: '.formatter.formatDate'}" icon="sap-icon://sys-enter-2" state="Success"/>
+					<m:ObjectStatus class="sapUiSmallMarginBottom" text="Last update: { path: 'Resume>/updated', formatter: '.formatter.formatDate'}" icon="sap-icon://sys-enter-2" state="Success"/>
 
 				</headerContent>
 				<sections>
