@@ -1,0 +1,190 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" xmlns:tnt="sap.tnt"
+	xmlns:core="sap.ui.core" controllerName="sk.peterlabuda.resume.Resume.controller.Resume" height="100%">
+	<m:Shell id="shell">
+		<m:App id="app">
+			<ObjectPageLayout id="ObjectPageLayout" preserveHeaderStateOnScroll="false" upperCaseAnchorBar="false" showFooter="true" flexEnabled="true">
+				<headerTitle>
+					<ObjectPageDynamicHeaderTitle >
+						<expandedHeading>
+							<m:HBox>
+								<m:Title text="{Resume>/title} {Resume>/name} {Resume>/lastName}" wrapping="true"/>
+								<!--<m:ObjectMarker type="Favorite" class="sapUiTinyMarginBegin"/>-->
+							</m:HBox>
+						</expandedHeading>
+						<snappedHeading>
+							<m:FlexBox fitContainer="true" alignItems="Center">
+								<m:Avatar src="./images/portrait.jpg" class="sapUiTinyMarginEnd"/>
+								<m:Title text="{Resume>/title} {Resume>/name} {Resume>/lastName}" wrapping="true"/>
+							</m:FlexBox>
+						</snappedHeading>
+						<expandedContent>
+							<m:Text text="{Resume>/experiences/0/position}"/>
+						</expandedContent>
+						<snappedContent>
+							<m:Text text="{Resume>/experiences/0/position}"/>
+						</snappedContent>
+						<snappedTitleOnMobile>
+							<m:Title text="{Resume>/experiences/0/position}"/>
+						</snappedTitleOnMobile>
+						<!--<actions>-->
+						<!--	<m:OverflowToolbarButton icon="sap-icon://pull-down" text="{i18n>download}" type="Emphasized" tooltip="{i18n>download}" press="downloadCv">-->
+						<!--		<m:layoutData>-->
+									
+						<!--			<m:OverflowToolbarLayoutData priority="NeverOverflow"/>-->
+						<!--		</m:layoutData>-->
+						<!--	</m:OverflowToolbarButton>-->
+						<!--</actions>-->
+					</ObjectPageDynamicHeaderTitle>
+				</headerTitle>
+				<headerContent>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignContent="Stretch" alignItems="Start">
+						<m:Avatar class="sapUiSmallMarginEnd" src="./images/portrait.jpg" displaySize="XL"/>
+						<layout:VerticalLayout class="sapUiLargeMarginBeginEnd">
+							<m:Title text="{i18n>languages}" class="sapUiMediumMarginBottom"/>
+							<m:Label text="{i18n>enLevel}" labelFor="RI_en"/>
+							<m:RatingIndicator id="RI_en" maxValue="5" class="sapUiSmallMarginBottom" value="{Resume>/languages/0/level}"
+								tooltip="English language level" editable="false"/>
+							<m:Label text="{i18n>deLevel}" labelFor="RI_de"/>
+							<m:RatingIndicator id="RI_de" maxValue="5" class="sapUiSmallMarginBottom" value="{Resume>/languages/1/level}"
+								tooltip="German language level" editable="false"/>
+							<!--</m:VBox>-->
+						</layout:VerticalLayout>
+						<layout:VerticalLayout class="sapUiLargeMarginBeginEnd">
+							<m:Title text="{i18n>contactInformations}" class="sapUiMediumMarginBottom"/>
+							<m:HBox alignContent="Center">
+								<m:Image src="./images/Tel.png" width="20px" class="sapUiSmallMarginEnd"/>
+								<!--<core:Icon src="sap-icon://iphone" width="20px" color="#031E48" class="sapUiSmallMarginEnd"/>-->
+								<m:Link text="{Resume>/phone}" press="handleTelPress"/>
+							</m:HBox>
+							<m:HBox alignContent="Center">
+								<m:Image src="./images/Gmail.png" width="20px" class="sapUiSmallMarginEnd"/>
+								<m:Link text="{Resume>/email}" press="handleEmailPress"/>
+							</m:HBox>
+							<m:HBox alignContent="Center">
+								<m:Image src="./images/Linkedin.png" width="20px" class="sapUiSmallMarginEnd"/>
+								<m:Link text="{Resume>/linkedin}" press="handleUrlPress"/>
+							</m:HBox>
+							<m:HBox alignContent="Center">
+								<core:Icon src="sap-icon://map" width="20px" color="#031E48" class="sapUiSmallMarginEnd"/>
+								<m:Label text="{Resume>/address/city}, {Resume>/address/state}"/>
+							</m:HBox>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout visible="{= ${device>/Desktop} ? false: true}" class="sapUiLargeMarginBeginEnd">
+							<m:Image densityAware="false" id="imgId"/>
+							<m:Button text="Download contact informations (vcard)" press="downloadVCard"/>
+						</layout:VerticalLayout>
+					</m:FlexBox>
+												<m:ObjectStatus class="sapUiSmallMarginBottom" text="Last update: { path: 'Resume>/updated', formatter: '.formatter.formatDate'}" icon="sap-icon://sys-enter-2" state="Success"/>
+
+				</headerContent>
+				<sections>
+					<ObjectPageSection titleUppercase="false" title="{i18n>skills}">
+						<subSections>
+							<ObjectPageSubSection titleUppercase="false">
+								<blocks>
+									<m:FlexBox items="{Resume>/skills}" justifyContent="Center" wrap="Wrap" class="sapUiSmallMarginBottom">
+										<tnt:InfoLabel text="{Resume>}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+									</m:FlexBox>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+					<ObjectPageSection titleUppercase="false" title="{i18n>experiences}">
+						<subSections>
+							<ObjectPageSubSection title="{i18n>experiences}" titleUppercase="false">
+								<blocks>
+									<m:Table id="idExperiencesTable" inset="false" items="{ path: 'Resume>/experiences', sorter: { path: 'from', descending : 'true' } }">
+										<m:columns>
+											<m:Column width="8em">
+												<m:Text text="{i18n>from}"/>
+											</m:Column>
+											<m:Column width="8em">
+												<m:Text text="{i18n>to}"/>
+											</m:Column>
+											<m:Column minScreenWidth="Tablet" demandPopin="true">
+												<m:Text text="{i18n>description}"/>
+											</m:Column>
+											<m:Column minScreenWidth="Tablet" demandPopin="true">
+												<m:Text text="{i18n>company}"/>
+											</m:Column>
+										</m:columns>
+										<m:items>
+											<m:ColumnListItem vAlign="Middle">
+												<m:cells>
+													<m:Text text="{ path: 'Resume>from', formatter: '.formatter.formatDate'}"/>
+													<m:Text text="{ path: 'Resume>to', formatter: '.formatter.formatDate'}"/>
+													<m:ObjectIdentifier title="{Resume>position}" text="{Resume>description}"/>
+													<m:Text text="{Resume>company}"/>
+												</m:cells>
+											</m:ColumnListItem>
+										</m:items>
+									</m:Table>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+					<ObjectPageSection titleUppercase="false" title="{i18n>educations}">
+						<subSections>
+							<ObjectPageSubSection title="{i18n>educations}" titleUppercase="false">
+								<blocks>
+									<m:Table id="idEducationTable" inset="false" items="{ path: 'Resume>/educations', sorter: { path: 'from', descending : 'true' }}">
+										<m:columns>
+											<m:Column width="8em">
+												<m:Text text="{i18n>from}"/>
+											</m:Column>
+											<m:Column width="8em">
+												<m:Text text="{i18n>to}"/>
+											</m:Column>
+											<m:Column minScreenWidth="Tablet" demandPopin="true">
+												<m:Text text="{i18n>school}"/>
+											</m:Column>
+										</m:columns>
+										<m:items>
+											<m:ColumnListItem vAlign="Middle">
+												<m:cells>
+													<m:Text text="{ path: 'Resume>from', formatter: '.formatter.formatDate'}"/>
+													<m:Text text="{ path: 'Resume>to', formatter: '.formatter.formatDate'}"/>
+													<m:ObjectIdentifier title="{Resume>school}" text="{Resume>faculty} {Resume>expertise}"/>
+												</m:cells>
+											</m:ColumnListItem>
+										</m:items>
+									</m:Table>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+					<ObjectPageSection titleUppercase="false" title="{i18n>trainings}">
+						<subSections>
+							<ObjectPageSubSection titleUppercase="false" title="{i18n>trainings}">
+								<blocks>
+									<m:Table id="idTrainingsTable" inset="false" items="{ path: 'Resume>/trainings', sorter: { path: 'from', descending : 'true' } }">
+										<m:columns>
+											<m:Column width="8em">
+												<m:Text text="{i18n>from}"/>
+											</m:Column>
+											<m:Column width="8em">
+												<m:Text text="{i18n>to}"/>
+											</m:Column>
+											<m:Column minScreenWidth="Tablet" demandPopin="true">
+												<m:Text text="{i18n>trainings}"/>
+											</m:Column>
+										</m:columns>
+										<m:items>
+											<m:ColumnListItem vAlign="Middle">
+												<m:cells>
+													<m:Text text="{ path: 'Resume>from', formatter: '.formatter.formatDate'}"/>
+													<m:Text text="{ path: 'Resume>to', formatter: '.formatter.formatDate'}"/>
+													<m:ObjectIdentifier title="{Resume>id}: {Resume>title}" text="{Resume>description}"/>
+												</m:cells>
+											</m:ColumnListItem>
+										</m:items>
+									</m:Table>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+				</sections>
+			</ObjectPageLayout>
+		</m:App>
+	</m:Shell>
+</mvc:View>

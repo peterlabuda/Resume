@@ -1,0 +1,103 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sk.peterlabuda.resume.Resume",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.38.11"
+		},
+		"dataSources": {
+			"resumeModel": {
+				"uri": "model/resume.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "sk.peterlabuda.resume.Resume.view.Resume",
+			"type": "XML",
+			"async": true,
+			"id": "Resume"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sk.peterlabuda.resume.Resume.i18n.i18n"
+				}
+			},
+			"Resume": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "resumeModel",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "sk.peterlabuda.resume.Resume.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "RouteResume",
+				"pattern": "RouteResume",
+				"target": ["TargetResume"]
+			}],
+			"targets": {
+				"TargetResume": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "Resume",
+					"viewName": "Resume"
+				}
+			}
+		}
+	}
+}

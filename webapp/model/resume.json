@@ -1,0 +1,135 @@
+{
+    "updated": "2022-04-21T22:00:00.000Z",
+    "title": "Ing.",
+    "name": "Peter",
+    "lastName": "Labuda",
+    "birthDay": "1991-11-12T09:00:00.000Z",
+    "phone": "+421 944 245 422",
+    "email": "peter.labuda.2@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/peter-labuda",
+    "address": {
+        "street": "Hidden",
+        "number": 0,
+        "city": "Kosice",
+        "zip": "00000",
+        "state": "Slovakia"
+    },
+    "languages": [
+        {
+            "id": "en",
+            "level": 4
+        },
+        {
+            "id": "de",
+            "level": 3
+        }
+    ],
+    "experiences": [
+        {
+            "from": "2021-03-01T09:00:00.000Z",
+            "to": "",
+            "position": "Senior ABAP Developer",
+            "company": "Deutsche Telekom IT & Telecommunications Slovakia s. r. o.",
+            "description": "Mostly solving of incidents in OFI (making indian coding working)"
+        },
+        {
+            "from": "2018-01-01T09:00:00.000Z",
+            "to": "2021-02-28T16:00:00.000Z",
+            "position": "ABAP Developer",
+            "company": "T-Systems Slovakia s.r.o.",
+            "description": "Creating new reports, maintenance of existing solutions, implementation of new SAPUI5 applications (Front End & Backend)"
+        },
+        {
+            "from": "2016-06-01T09:00:00.000Z",
+            "to": "2017-12-31T16:00:00.000Z",
+            "position": "Junior ABAP Developer",
+            "company": "T-Systems Slovakia s.r.o.",
+            "description": "PSL International Procurement"
+        },
+        {
+            "from": "2015-01-01T09:00:00.000Z",
+            "to": "2016-05-30T16:00:00.000Z",
+            "position": "IT Assistant",
+            "company": "T-Systems Slovakia s.r.o.",
+            "description": "User Management in many SAP systems, checking SAP system condition"
+        }
+    ],
+    "educations": [
+        {
+            "from": "2011-09-02T09:00:00.000Z",
+            "to": "2016-06-12T09:00:00.000Z",
+            "degree": 3,
+            "school": "Technical University of Košice",
+            "faculty": "Faculty of Electrical Engineering and Informatics",
+            "expertise": " - Informatics"
+        },
+        {
+            "from": "2007-09-02T09:00:00.000Z",
+            "to": "2011-06-30T09:00:00.000Z",
+            "degree": 1,
+            "school": "Grammar school P.O.Hviezdoslava, Kežmarok",
+            "faculty": "",
+            "expertise": ""
+        }
+    ],
+    "trainings": [
+        {
+            "id": "UX400",
+            "title": "Developing UIs with SAPUI5",
+            "from": "2022-03-21T09:00:00.000Z",
+            "to": "2022-03-25T16:00:00.000Z",
+            "description": "SAP's UX Strategy, SAPUI5 Overview, SAP Business Application Studio, Loading and Initializing SAPUI5, Dependency Management, Views and Controllers, Layout Controls, Fragments Models and Data Binding, Localization, OData Models, Component Implementation, Worklist App Development"
+        },
+        {
+            "id": "HA400",
+            "title": "ABAP Programming for SAP HANA",
+            "from": "2022-03-16T09:00:00.000Z",
+            "to": "2022-03-18T16:00:00.000Z",
+            "description": "Code Inspector and ABAP Test Cockpit, ABAP Trace and ABAP Profiler, SQL Trace; Tools to prioritize performance issues: SQL Monitor, SQL Performance Tuning Worklist; Performance Rules and Guidelines for ABAP in the context of SAP HANA; Database Independent Code-to-Data; Enhanced Open SQL; Defining advanced views using Core Data Services (CDS) and CDS Associations in ABAP; SAP HANA specific Code-to-Data; Consuming SAP HANA objects in ABAP using native SQL and ADBC; Creating and using External Views; ABAP Transport of SAP HANA Objects (HTC and HTA); Using SAP HANA Full Text Search in ABAP; Enabling input fields for type-ahead search; SAP List Viewer (ALV) optimized for SAP HANA"
+        },
+        {
+            "id": "BC490",
+            "title": "ABAP Performance Tuning",
+            "from": "2021-08-02T09:00:00.000Z",
+            "to": "2021-08-06T16:00:00.000Z",
+            "description": "Individual object analysis: transaction step analysis, SQL performance analysis, ABAP runtime analysis, ABAP Debugger, optimizing database accesses; Unsuitable access path: introduction to database indexes; create, change and delete database indexes; DB views or ABAP joins and database indexes; Open SQL statements and database indexes; Suitable access paths: accessing individual tables, accessing multiple tables, accessing pool and cluster tables, SAP table buffering; Optimized use of internal tables: design and definition of internal tables, efficient structure, efficient access, applications ;SAP system analysis - overview; SAP workload analysis (transaction profiles)"
+        },
+        {
+            "id": "S4SD1",
+            "title": "SAP S/4HANA Sales - Functions & Innovations",
+            "from": "2018-10-11T09:00:00.000Z",
+            "to": "2018-10-11T16:00:00.000Z",
+            "description": "Business Partner Approach; Data Model Simplifications; Sales Analytics; Billing Document Output Management; SAP S/4HANA Best Practice - Sale from Stock; Sale from Stock; SAP Smart Business for Sales Order Fulfilment"
+        },
+        {
+            "id": "SCM680",
+            "title": "Cross-Application Processes in ERP MM and SD",
+            "from": "2017-07-17T09:00:00.000Z",
+            "to": "2017-07-19T16:00:00.000Z",
+            "description": "Third-party order processing; Cross-company-code sales; Stock transfers within a company code; Cross-company-code stock transfers; Subcontracting; Advanced Returns Management (supplier and customer returns) "
+        },
+        {
+            "id": "SCM500",
+            "title": "Processes in Procurement",
+            "from": "2017-06-12T09:00:00.000Z",
+            "to": "2017-06-16T16:00:00.000Z",
+            "description": ""
+        },
+        {
+            "id": "SM100",
+            "title": "SAP Solution Manager Operations and Configuration",
+            "from": "2016-02-29T09:00:00.000Z",
+            "to": "2016-03-04T16:00:00.000Z",
+            "description": ""
+        }
+    ],
+    "skills": [
+        "ABAP",
+        "SAP UI5",
+        "SAP ADOBE Forms",
+        "JavaScript",
+        "OData",
+        "JSON",
+        "XML"
+    ]
+}
