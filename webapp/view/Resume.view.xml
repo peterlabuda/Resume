@@ -26,14 +26,14 @@
 						<snappedTitleOnMobile>
 							<m:Title text="{Resume>/experiences/0/position}"/>
 						</snappedTitleOnMobile>
-						<!--<actions>-->
-						<!--	<m:OverflowToolbarButton icon="sap-icon://pull-down" text="{i18n>download}" type="Emphasized" tooltip="{i18n>download}" press="downloadCv">-->
-						<!--		<m:layoutData>-->
+						<actions>
+							<m:OverflowToolbarButton icon="sap-icon://pull-down" text="{i18n>download}" type="Emphasized" tooltip="{i18n>download}" press="downloadCv">
+								<m:layoutData>
 									
-						<!--			<m:OverflowToolbarLayoutData priority="NeverOverflow"/>-->
-						<!--		</m:layoutData>-->
-						<!--	</m:OverflowToolbarButton>-->
-						<!--</actions>-->
+									<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+								</m:layoutData>
+							</m:OverflowToolbarButton>
+						</actions>
 					</ObjectPageDynamicHeaderTitle>
 				</headerTitle>
 				<headerContent>
