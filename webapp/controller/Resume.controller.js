@@ -68,7 +68,7 @@ sap.ui.define([
 			sap.ui.core.util.File.save(this.generateVCardString(), "Labuda", "vcard", "text/vcard");
 		},
 		downloadCv: function(){
-			sap.ui.core.util.File.save(this, "LabudaPeterCV", "pdf", "application/pdf");
+			window.open("https://peterlabuda.github.io/Resume/webapp/images/LabudaCV.pdf");
 		}
 	});
 });
